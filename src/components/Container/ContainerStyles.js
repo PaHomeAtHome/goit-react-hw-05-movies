@@ -5,7 +5,7 @@ const ContainerStyle = styled.div`
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  background: linear-gradient(#0066aa, white);
+  background: linear-gradient(270deg, #0066aa, white, #0066aa);
   text-align: center;
   padding-top: 20px;
 `;
