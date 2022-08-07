@@ -1,4 +1,5 @@
 import { MovieCard } from './ResultItem.styled';
+import { Title } from './ResultItem.styled';
 
 export const ResultsItem = ({ result }) => {
   const { title, name, poster_path } = result;
@@ -8,7 +9,7 @@ export const ResultsItem = ({ result }) => {
         src={'https://image.tmdb.org/t/p/w500' + poster_path}
         alt={title || name}
       />
-      <h3>{title || name}</h3>
+      <Title>{title || name}</Title>
     </MovieCard>
   );
 };
