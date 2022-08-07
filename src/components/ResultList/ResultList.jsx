@@ -1,12 +1,13 @@
 import { ResultsItem } from 'components/ResultItem/ResultItem';
+import { List } from './ResultList.styled';
 
 export const ResultsList = ({ results }) => {
   console.log(results);
   return (
-    <ul>
+    <List>
       {results.map(result => (
         <ResultsItem result={result} key={result.id} />
       ))}
-    </ul>
+    </List>
   );
 };
