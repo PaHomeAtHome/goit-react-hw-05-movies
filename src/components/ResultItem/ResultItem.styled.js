@@ -4,14 +4,15 @@ export const MovieCard = styled.li`
   max-width: 100%;
   padding: 10px 10px;
   transition-duration: 200ms;
-  color: white;
+  color: #ffffffbb;
   border: 1px solid #77777777;
+  border-radius: 10px;
 
   &:hover {
     cursor: pointer;
     scale: 1.05;
-    background-color: #ffffff11;
-    color: #00dd00;
+    background-color: #ffffff22;
+    color: white;
   }
 
   img {

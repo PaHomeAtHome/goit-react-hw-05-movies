@@ -11,13 +11,19 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 20px;
   padding: 8px 0;
   margin-bottom: 16px;
   border-bottom: 1px solid black;
 
   > nav {
     display: flex;
+    justify-content: space-between;
+
+    a {
+      margin: 5px;
+      font-size: 20px;
+    }
   }
 `;
 
@@ -31,7 +37,7 @@ export const Link = styled(NavLink)`
 
   &.active,
   &:hover {
-    color: white;
-    background-color: #ff0000bb;
+    color: black;
+    background-color: #cccc00;
   }
 `;
