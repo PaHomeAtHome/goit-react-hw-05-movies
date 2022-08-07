@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const MovieCard = styled.li`
   max-width: 100%;
-  padding: 10px 10px;
   transition-duration: 200ms;
   color: #ffffffbb;
   border: 1px solid #77777777;
   border-radius: 10px;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
-    scale: 1.05;
+    scale: 1.03;
     background-color: #ffffff22;
     color: white;
   }
@@ -24,5 +24,5 @@ export const MovieCard = styled.li`
 
 export const Title = styled.h3`
   margin: 0px;
-  margin-top: 5px;
+  padding: 10px;
 `;
