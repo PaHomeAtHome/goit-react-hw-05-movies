@@ -10,8 +10,8 @@ export const MovieCard = styled.li`
   &:hover {
     cursor: pointer;
     scale: 1.05;
-    color: black;
-    background-color: white;
+    background-color: #ffffff11;
+    color: #00dd00;
   }
 
   img {
