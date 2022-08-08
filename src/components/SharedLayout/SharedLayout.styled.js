@@ -23,7 +23,7 @@ export const Link = styled(NavLink)`
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  color: #ffffffbb;
+  color: white;
   font-weight: 500;
   transition-duration: 200ms;
   font-size: 21px;
@@ -31,9 +31,15 @@ export const Link = styled(NavLink)`
 
   &.active,
   &:hover {
-    color: black;
-    background-color: #dddd00;
-    font-weight: 700;
     cursor: pointer;
+  }
+
+  &:hover {
+    color: red;
+  }
+
+  &.active {
+    background-color: #dddd00;
+    color: black;
   }
 `;
