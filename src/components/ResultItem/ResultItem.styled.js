@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { List } from 'components/ResultList/ResultList.styled';
 
 export const Label = styled.div`
   padding: 10px;
@@ -13,9 +12,8 @@ export const MovieCard = styled.li`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   border-radius: 10px;
-  opacity: 0.9;
 
   img {
     display: block;
@@ -25,8 +23,6 @@ export const MovieCard = styled.li`
     border-top-right-radius: 10px;
     display: block;
     object-fit: cover;
-    transition-duration: 250ms;
-    opacity: 0.9;
   }
 
   &:hover {
@@ -35,12 +31,8 @@ export const MovieCard = styled.li`
     color: white;
     opacity: 1;
 
-    img {
-      opacity: 1;
-    }
-
     ${Label} {
-      background-color: #991111ff;
+      background-color: #cc0000ff;
     }
   }
 `;
