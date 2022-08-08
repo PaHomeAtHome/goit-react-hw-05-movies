@@ -18,7 +18,10 @@ export const App = () => {
   return (
     <Container>
       <Routes>
-        <Route path="/" element={<SharedLayout />}></Route>
+        <Route path="/" element={<SharedLayout />}>
+          {/* <Route path="mission" element={<Mission />}></Route>
+          <Route path="mission" element={<Mission />}></Route> */}
+        </Route>
       </Routes>
       <ResultsList results={results} />
     </Container>

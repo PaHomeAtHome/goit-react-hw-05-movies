@@ -6,13 +6,18 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 5px 5px;
-  border-bottom: 1px solid black;
+  padding: 15px 30px;
   background-color: black;
 
   > nav {
     display: flex;
     justify-content: space-between;
+
+    &:hover {
+      & > *:not(:hover) {
+        opacity: 0.2;
+      }
+    }
   }
 `;
 
@@ -29,17 +34,18 @@ export const Link = styled(NavLink)`
   font-size: 21px;
   margin: 5px;
 
+  &.active {
+    background-color: yellow;
+    color: black;
+  }
+
   &.active,
   &:hover {
     cursor: pointer;
   }
 
-  &:hover {
-    color: red;
-  }
-
-  &.active {
-    background-color: #dddd00;
-    color: black;
+  &:hover:not(.active) {
+    color: white;
+    background-color: green;
   }
 `;
