@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/API';
 import { BackDrop } from 'components/ResultItem/ResultItem.styled';
 import { Table } from 'components/ResultItem/ResultItem.styled';
+import { MovieInfo } from 'components/ResultItem/ResultItem.styled';
+import { MovieTitle } from 'components/ResultItem/ResultItem.styled';
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -19,13 +21,13 @@ export const MovieDetails = () => {
   return (
     <>
       {Object.keys(movie).length > 0 && (
-        <>
+        <MovieInfo>
           <BackDrop
             src={'https://image.tmdb.org/t/p/original/' + backdrop_path}
             alt={title}
           />
           <div>
-            <h2>{title}</h2>
+            <MovieTitle>{title.toUpperCase()}</MovieTitle>
             <Table>
               <tbody>
                 {Object.keys(movie).map(key => {
@@ -33,6 +35,7 @@ export const MovieDetails = () => {
                     (movie[key] !== null) &
                     (movie[key] !== 0) &
                     (movie[key] !== false) &
+                    (movie[key] !== '') &
                     (key !== `backdrop_path`) &
                     (key !== `id`) &
                     (key !== `poster_path`)
@@ -40,7 +43,10 @@ export const MovieDetails = () => {
                     if (Array.isArray(movie[key])) {
                       return (
                         <tr key={key}>
-                          <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
+                          <th>
+                            {key.charAt(0).toUpperCase() +
+                              key.slice(1).replaceAll('_', ' ')}
+                          </th>
                           <td>
                             {movie[key]
                               .map(el =>
@@ -69,7 +75,10 @@ export const MovieDetails = () => {
                     if (typeof movie[key] === 'object') {
                       return (
                         <tr key={key}>
-                          <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
+                          <th>
+                            {key.charAt(0).toUpperCase() +
+                              key.slice(1).replaceAll('_', ' ')}
+                          </th>
                           <td>
                             {Object.keys(movie[key])
                               .filter(
@@ -87,7 +96,10 @@ export const MovieDetails = () => {
 
                     return (
                       <tr key={key}>
-                        <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
+                        <th>
+                          {key.charAt(0).toUpperCase() +
+                            key.slice(1).replaceAll('_', ' ')}
+                        </th>
                         <td>{movie[key].toString()}</td>
                       </tr>
                     );
@@ -97,7 +109,7 @@ export const MovieDetails = () => {
               </tbody>
             </Table>
           </div>
-        </>
+        </MovieInfo>
       )}
     </>
   );

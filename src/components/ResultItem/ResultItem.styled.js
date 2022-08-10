@@ -56,10 +56,27 @@ export const BackDrop = styled.img`
   width: 100%;
 `;
 
+export const MovieInfo = styled.div`
+  background-color: #111111bb;
+  color: white;
+`;
+
+export const MovieTitle = styled.h2`
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: yellow;
+  text-shadow: 0px 0px 50px yellow;
+`;
+
 export const Table = styled.table`
+  /* background-color: red;s */
+  margin: auto;
+
   table,
   th,
   td {
+    font-size: 20px;
     padding: 20px 10px;
     border: 1px solid;
   }
