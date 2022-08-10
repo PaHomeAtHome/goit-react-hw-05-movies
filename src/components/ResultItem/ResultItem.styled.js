@@ -55,3 +55,12 @@ export const BackDrop = styled.img`
   display: block;
   width: 100%;
 `;
+
+export const Table = styled.table`
+  table,
+  th,
+  td {
+    padding: 20px 10px;
+    border: 1px solid;
+  }
+`;

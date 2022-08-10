@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/API';
 import { BackDrop } from 'components/ResultItem/ResultItem.styled';
+import { Table } from 'components/ResultItem/ResultItem.styled';
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ export const MovieDetails = () => {
           />
           <div>
             <h2>{title}</h2>
-            <table>
+            <Table>
               <tbody>
                 {Object.keys(movie).map(key => {
                   if (
@@ -39,7 +40,7 @@ export const MovieDetails = () => {
                     if (Array.isArray(movie[key])) {
                       return (
                         <tr key={key}>
-                          <td>{key}</td>
+                          <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
                           <td>
                             {movie[key]
                               .map(el =>
@@ -68,7 +69,7 @@ export const MovieDetails = () => {
                     if (typeof movie[key] === 'object') {
                       return (
                         <tr key={key}>
-                          <td>{key}</td>
+                          <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
                           <td>
                             {Object.keys(movie[key])
                               .filter(
@@ -86,7 +87,7 @@ export const MovieDetails = () => {
 
                     return (
                       <tr key={key}>
-                        <td>{key}</td>
+                        <th>{key.charAt(0).toUpperCase() + key.slice(1)}</th>
                         <td>{movie[key].toString()}</td>
                       </tr>
                     );
@@ -94,7 +95,7 @@ export const MovieDetails = () => {
                   return false;
                 })}
               </tbody>
-            </table>
+            </Table>
           </div>
         </>
       )}
