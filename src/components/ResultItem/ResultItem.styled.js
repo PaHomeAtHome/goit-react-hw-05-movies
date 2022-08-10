@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Label = styled.div`
   padding: 10px;
@@ -11,6 +12,7 @@ export const Label = styled.div`
 export const MovieCard = styled.li`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   max-width: 100%;
   transition-duration: 300ms;
   border-radius: 10px;
@@ -39,4 +41,17 @@ export const MovieCard = styled.li`
 
 export const Title = styled.h3`
   margin: 0px;
+`;
+
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: inherit;
+`;
+
+export const BackDrop = styled.img`
+  display: block;
+  width: 100%;
 `;

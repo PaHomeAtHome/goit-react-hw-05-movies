@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-
-import Container from './Container/Container';
 import fetchResult from 'services/API';
 import { useState, useEffect } from 'react';
-import { ResultsList } from './ResultList/ResultList';
+import Container from './Container/Container';
 import { SharedLayout } from './SharedLayout/SharedLayout';
+import { Home } from 'pages/Home';
+import { Movies } from 'pages/Movies';
+import { MovieDetails } from 'pages/MovieDetails';
 export const App = () => {
   const [results, setResults] = useState([]);
 
@@ -19,11 +20,11 @@ export const App = () => {
     <Container>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          {/* <Route path="mission" element={<Mission />}></Route>
-          <Route path="mission" element={<Mission />}></Route> */}
+          <Route index element={<Home results={results} />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:id" element={<MovieDetails />} />
         </Route>
       </Routes>
-      <ResultsList results={results} />
     </Container>
   );
 };
