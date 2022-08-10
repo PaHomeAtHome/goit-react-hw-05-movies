@@ -72,23 +72,31 @@ export const MovieTitle = styled.h2`
 `;
 
 export const Table = styled.table`
-  /* background-color: red;s */
   margin: auto;
   text-align: left;
-  border-collapse: collapse;
+  border-spacing: 0px;
+
   th,
   td {
     padding: 25px 30px;
-    border: 1px solid;
   }
 
   th {
-    background-color: #ff0000cc;
+    background-color: #cf0000ee;
     font-weight: 700;
     font-size: 20px;
   }
 
+  tr:nth-child(odd) {
+    background-color: #00000077;
+
+    th {
+      background-color: #dd0000;
+    }
+  }
+
   td {
+    background-color: #11111199;
     font-weight: 500;
     font-size: 18px;
   }
