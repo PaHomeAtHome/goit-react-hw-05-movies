@@ -51,8 +51,15 @@ export const MovieDetails = () => {
                                 )
                               )
                               .map((el, index) =>
-                                el.map(el => movie[key][index][el]).join(', ')
+                                el
+                                  .map(el => movie[key][index][el])
+                                  .filter(
+                                    (el, index, array) =>
+                                      index === array.indexOf(el)
+                                  )
+                                  .join(', ')
                               )
+
                               .join(', ')}
                           </td>
                         </tr>
