@@ -63,7 +63,9 @@ export const MovieInfo = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
-  margin: 30px 15px;
+  padding: 30px 15px;
+  background-color: #000000bb;
+  margin: 0;
   font-size: 50px;
   letter-spacing: 3px;
   font-weight: 700;
