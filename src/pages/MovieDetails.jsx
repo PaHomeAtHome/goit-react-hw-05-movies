@@ -5,6 +5,7 @@ import { BackDrop } from 'components/ResultItem/ResultItem.styled';
 import { Table } from 'components/ResultItem/ResultItem.styled';
 import { MovieInfo } from 'components/ResultItem/ResultItem.styled';
 import { MovieTitle } from 'components/ResultItem/ResultItem.styled';
+import { TableLink } from 'components/ResultItem/ResultItem.styled';
 
 export const MovieDetails = () => {
   const { id } = useParams();
@@ -100,7 +101,14 @@ export const MovieDetails = () => {
                           {key.charAt(0).toUpperCase() +
                             key.slice(1).replaceAll('_', ' ')}
                         </th>
-                        <td>{movie[key].toString()}</td>
+                        <td>
+                          {(movie[key].toString().includes('https') && (
+                            <TableLink href={movie[key].toString()}>
+                              {movie[key].toString()}
+                            </TableLink>
+                          )) ||
+                            movie[key].toString()}
+                        </td>
                       </tr>
                     );
                   }

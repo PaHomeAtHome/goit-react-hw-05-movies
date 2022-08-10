@@ -93,3 +93,8 @@ export const Table = styled.table`
     font-size: 18px;
   }
 `;
+
+export const TableLink = styled.a`
+  color: yellow;
+  text-decoration: none;
+`;
