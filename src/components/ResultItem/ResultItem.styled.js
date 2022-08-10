@@ -58,10 +58,12 @@ export const BackDrop = styled.img`
 
 export const MovieInfo = styled.div`
   background-color: #111111bb;
+  padding: 30px;
   color: white;
 `;
 
 export const MovieTitle = styled.h2`
+  margin: 30px 15px;
   font-size: 50px;
   letter-spacing: 3px;
   font-weight: 700;
@@ -72,12 +74,22 @@ export const MovieTitle = styled.h2`
 export const Table = styled.table`
   /* background-color: red;s */
   margin: auto;
-
-  table,
+  text-align: left;
+  border-collapse: collapse;
   th,
   td {
-    font-size: 20px;
-    padding: 20px 10px;
+    padding: 25px 30px;
     border: 1px solid;
+  }
+
+  th {
+    background-color: #ff0000cc;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  td {
+    font-weight: 500;
+    font-size: 18px;
   }
 `;
