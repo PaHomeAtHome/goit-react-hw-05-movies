@@ -77,6 +77,7 @@ export const Table = styled.table`
   margin: auto;
   text-align: left;
   border-spacing: 0px;
+  width: 100%;
 
   th,
   td {
