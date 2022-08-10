@@ -77,7 +77,9 @@ export const Table = styled.table`
   margin: auto;
   text-align: left;
   border-spacing: 0px;
+  table-layout: fixed;
   width: 100%;
+  overflow: hidden;
 
   th,
   td {
@@ -92,7 +94,6 @@ export const Table = styled.table`
 
   tr:nth-child(odd) {
     background-color: #00000077;
-
     th {
       background-color: #dd0000;
     }
