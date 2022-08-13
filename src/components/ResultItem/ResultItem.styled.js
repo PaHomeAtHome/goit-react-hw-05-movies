@@ -77,7 +77,7 @@ export const Table = styled.table`
   margin: auto;
   text-align: left;
   border-spacing: 0px;
-  table-layout: fixed;
+  /* table-layout: fixed; */
   width: 100%;
   overflow: hidden;
 
