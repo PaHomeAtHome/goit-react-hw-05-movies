@@ -33,6 +33,7 @@ export const Link = styled(NavLink)`
   transition-duration: 200ms;
   font-size: 21px;
   margin: 5px;
+  box-shadow: 0px 0px 2px yellow;
 
   &.active {
     background-color: yellow;
@@ -46,6 +47,6 @@ export const Link = styled(NavLink)`
 
   &:hover:not(.active) {
     color: white;
-    background-color: green;
+    background-color: red;
   }
 `;
