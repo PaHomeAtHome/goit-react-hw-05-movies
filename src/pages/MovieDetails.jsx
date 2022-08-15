@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/API';
-import { BackDrop } from 'components/ResultItem/ResultItem.styled';
-import { Table } from 'components/ResultItem/ResultItem.styled';
-import { MovieInfo } from 'components/ResultItem/ResultItem.styled';
-import { MovieTitle } from 'components/ResultItem/ResultItem.styled';
-import { TableLink } from 'components/ResultItem/ResultItem.styled';
+import {
+  BackDrop,
+  Table,
+  MovieInfo,
+  MovieTitle,
+  TableLink,
+} from 'components/ResultItem/ResultItem.styled';
+
+import { ExtraLink } from 'components/ResultItem/ResultItem.styled';
+
+import { Outlet } from 'react-router-dom';
 
 export const MovieDetails = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    getMovieInfo(id).then(movie => {
+    getMovieInfo(movieId).then(movie => {
       setMovie(movie);
     });
-  }, [id]);
+  }, [movieId]);
 
-  console.log(movie);
   const { title, backdrop_path } = movie;
   return (
     <>
@@ -29,6 +34,9 @@ export const MovieDetails = () => {
           />
           <div>
             <MovieTitle>{title.toUpperCase()}</MovieTitle>
+            <ExtraLink to="cast">Cast</ExtraLink>
+            <ExtraLink to="reviews">Reviews</ExtraLink>
+            <Outlet />
             <Table>
               <tbody>
                 {Object.keys(movie).map(key => {

@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const Label = styled.div`
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -57,6 +61,11 @@ export const BackDrop = styled.img`
 `;
 
 export const MovieInfo = styled.div`
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: inherit;
   background-color: #111111bb;
   padding: 30px;
   color: white;
@@ -109,4 +118,63 @@ export const Table = styled.table`
 export const TableLink = styled.a`
   color: yellow;
   text-decoration: none;
+`;
+
+export const ExtraLink = styled(NavLink)`
+  display: inline-flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition-duration: 200ms;
+  font-size: 21px;
+  margin: 20px;
+  box-shadow: 0px 0px 2px white;
+
+  &.active {
+    color: white;
+    background-color: #000000bb;
+  }
+
+  &.active,
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover:not(.active) {
+    color: black;
+    background-color: white;
+  }
+`;
+
+export const ActorCard = styled.li`
+  img {
+    object-fit: cover;
+    display: block;
+    flex-grow: 1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 100%;
+  transition-duration: 300ms;
+  box-shadow: 0px 0px 2px white;
+`;
+
+export const Actor = styled.span`
+  color: yellow;
+  font-size: 18px;
+`;
+
+export const Character = styled.span`
+  color: red;
+  font-size: 18px;
 `;

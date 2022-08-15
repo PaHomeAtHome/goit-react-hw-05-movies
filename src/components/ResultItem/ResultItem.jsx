@@ -4,8 +4,8 @@ import { Title, Label, Link } from './ResultItem.styled';
 export const ResultsItem = ({ result }) => {
   const { title, name, poster_path } = result;
   return (
-    <Link to={`movies/${result.id}`}>
-      <MovieCard>
+    <MovieCard>
+      <Link to={`movies/${result.id}`}>
         <img
           src={'https://image.tmdb.org/t/p/w500' + poster_path}
           alt={title || name}
@@ -13,7 +13,7 @@ export const ResultsItem = ({ result }) => {
         <Label>
           <Title>{title || name}</Title>
         </Label>
-      </MovieCard>
-    </Link>
+      </Link>
+    </MovieCard>
   );
 };

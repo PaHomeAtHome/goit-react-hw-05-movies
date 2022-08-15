@@ -33,3 +33,34 @@ export async function getMovieInfo(id) {
 
   return response.data;
 }
+
+export async function getCast(id) {
+  const response = await axios
+    .get(URL_ID + id + `/credits`, {
+      params: {
+        api_key: API_KEY,
+      },
+    })
+    .catch(function (error) {
+      console.log(error);
+      return `No results`;
+    });
+
+  return response.data.cast;
+}
+
+export async function getReviews(id) {
+  const response = await axios
+    .get(URL_ID + id + `/Reviews`, {
+      params: {
+        api_key: API_KEY,
+      },
+    })
+    .catch(function (error) {
+      console.log(error);
+      return `No results`;
+    });
+
+  console.log(response.data);
+  return response.data;
+}
