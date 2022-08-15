@@ -25,14 +25,14 @@ export const MovieDetails = () => {
   }, []);
 
   const { title, backdrop_path } = movie;
+  const image =
+    (backdrop_path && 'https://image.tmdb.org/t/p/original/' + backdrop_path) ||
+    `https://www.kindpng.com/picc/m/18-189751_movie-placeholder-hd-png-download.png`;
   return (
     <>
       {Object.keys(movie).length > 0 && (
         <MovieInfo>
-          <BackDrop
-            src={'https://image.tmdb.org/t/p/original/' + backdrop_path}
-            alt={title}
-          />
+          <BackDrop src={image} alt={title} />
           <div>
             <MovieTitle>{title.toUpperCase()}</MovieTitle>
             <ExtraLink to="cast">Cast</ExtraLink>

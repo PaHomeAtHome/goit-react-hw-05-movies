@@ -6,6 +6,7 @@ import {
   ActorCard,
   Actor,
   Character,
+  CastContent,
 } from 'components/ResultItem/ResultItem.styled';
 
 export const Cast = () => {
@@ -29,11 +30,12 @@ export const Cast = () => {
         return (
           <ActorCard key={name}>
             <img src={image} alt={name} />
-            <p>
+            <CastContent>
               Character: <Character>{character}</Character>
-              <br></br>
+            </CastContent>
+            <CastContent>
               Actor: <Actor>{name}</Actor>
-            </p>
+            </CastContent>
           </ActorCard>
         );
       })}

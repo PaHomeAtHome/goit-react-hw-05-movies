@@ -35,3 +35,21 @@ export const CastList = styled.ul`
     }
   }
 `;
+
+export const ReviewList = styled.ul`
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 20px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 10px;
+  list-style: none;
+  background-color: #111111bb;
+  color: #ffffffbb;
+
+  &:hover {
+    & > *:not(:hover) {
+      opacity: 0.1;
+    }
+  }
+`;

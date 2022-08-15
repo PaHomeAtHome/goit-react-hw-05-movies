@@ -138,6 +138,7 @@ export const ExtraLink = styled(NavLink)`
   &.active {
     color: white;
     background-color: #000000bb;
+    box-shadow: 0px 0px 2px #000000bb;
   }
 
   &.active,
@@ -171,10 +172,52 @@ export const ActorCard = styled.li`
 
 export const Actor = styled.span`
   color: yellow;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export const Character = styled.span`
   color: red;
+  font-size: 22px;
+`;
+
+export const ReviewItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 100%;
+  transition-duration: 300ms;
+  border-radius: 10px;
+`;
+
+export const ReviewAuthor = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+  color: yellow;
+  margin-bottom: 5px;
+  margin-top: 10px;
+`;
+
+export const ReviewContent = styled.p`
+  margin-top: 5px;
   font-size: 18px;
+  text-align: justify;
+  margin-bottom: 10px;
+`;
+
+export const NoReviews = styled.p`
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+`;
+
+export const CastContent = styled.p`
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 5px;
+
+  &:last-child {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
 `;

@@ -52,7 +52,7 @@ export async function getCast(id) {
 
 export async function getReviews(id) {
   const response = await axios
-    .get(URL_ID + id + `/Reviews`, {
+    .get(URL_ID + id + `/reviews`, {
       params: {
         api_key: API_KEY,
       },
@@ -62,6 +62,6 @@ export async function getReviews(id) {
       return `No results`;
     });
 
-  console.log(response.data);
-  return response.data;
+  console.log(response.data.results);
+  return response.data.results;
 }
