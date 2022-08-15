@@ -14,9 +14,10 @@ export const Cast = () => {
 
   useEffect(() => {
     getCast(movieId).then(cast => {
-      setCast(cast);
+      setCast(cast.slice(0, 21));
     });
-  }, [movieId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <CastList>

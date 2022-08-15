@@ -21,7 +21,8 @@ export const MovieDetails = () => {
     getMovieInfo(movieId).then(movie => {
       setMovie(movie);
     });
-  }, [movieId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const { title, backdrop_path } = movie;
   return (

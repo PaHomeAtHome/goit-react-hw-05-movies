@@ -39,6 +39,7 @@ export async function getCast(id) {
     .get(URL_ID + id + `/credits`, {
       params: {
         api_key: API_KEY,
+        page: 1,
       },
     })
     .catch(function (error) {
