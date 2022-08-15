@@ -205,13 +205,13 @@ export const ReviewContent = styled.p`
 `;
 
 export const NoReviews = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
 `;
 
 export const CastContent = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   margin: 10px 5px;
