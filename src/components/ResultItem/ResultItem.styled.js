@@ -222,3 +222,38 @@ export const CastContent = styled.p`
     margin-bottom: 20px;
   }
 `;
+
+export const SearchButton = styled.button`
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  background-color: green;
+  color: white;
+  margin-left: 10px;
+  border: none;
+  /* box-shadow: 0px 0px 5px 0px yellow; */
+  transition-duration: 100ms;
+  padding: 9px;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: red;
+    scale: 1.1;
+  }
+`;
+
+export const SearchForm = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+`;
+
+export const SearchInput = styled.input`
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+
+  /* box-shadow: 0px 0px 5px 0px yellow; */
+`;
