@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { getReviews } from 'services/API';
 import { ReviewList } from 'components/ResultList/ResultList.styled';
 import {
@@ -12,6 +12,7 @@ import {
 export const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  useLocation();
 
   useEffect(() => {
     getReviews(movieId).then(reviews => {

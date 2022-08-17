@@ -18,7 +18,8 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? location.state ?? '/';
+  const backLinkHref = location.state?.from ?? '/';
+  console.log(location.state?.from.pathname);
 
   useEffect(() => {
     getMovieInfo(movieId).then(movie => {
@@ -39,8 +40,12 @@ export const MovieDetails = () => {
           <BackDrop src={image} alt={title} />
           <div>
             <MovieTitle>{title.toUpperCase()}</MovieTitle>
-            <ExtraLink to="cast">Cast</ExtraLink>
-            <ExtraLink to="reviews">Reviews</ExtraLink>
+            <ExtraLink to="cast" state={{ from: location.state.from }}>
+              Cast
+            </ExtraLink>
+            <ExtraLink to="reviews" state={{ from: location.state.from }}>
+              Reviews
+            </ExtraLink>
             <Outlet />
             <Table>
               <tbody>

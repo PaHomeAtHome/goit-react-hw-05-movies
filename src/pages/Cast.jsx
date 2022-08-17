@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { getCast } from 'services/API';
 import { CastList } from 'components/ResultList/ResultList.styled';
 import {
@@ -13,6 +13,7 @@ import {
 export const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
+  useLocation();
 
   useEffect(() => {
     getCast(movieId).then(cast => {
