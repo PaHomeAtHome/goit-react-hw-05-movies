@@ -66,7 +66,7 @@ export async function getReviews(id) {
 
 export async function findMovies(query) {
   const response = await axios
-    .get(URL + 'search/movie/', {
+    .get(URL + 'search/movie', {
       params: {
         api_key: API_KEY,
         query,
