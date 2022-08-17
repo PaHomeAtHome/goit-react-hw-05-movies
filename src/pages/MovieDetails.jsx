@@ -22,8 +22,13 @@ const MovieDetails = () => {
 
   useEffect(() => {
     getMovieInfo(movieId).then(movie => {
-      setMovie(movie);
+      if (movie !== undefined) {
+        setMovie(movie);
+      }
+
+      return;
     });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -33,7 +38,7 @@ const MovieDetails = () => {
     `https://www.kindpng.com/picc/m/18-189751_movie-placeholder-hd-png-download.png`;
   return (
     <>
-      {Object.keys(movie).length > 0 && (
+      {(Object.keys(movie).length > 0 && (
         <MovieInfo>
           <BackLink to={backLinkHref}>Go back</BackLink>
           <BackDrop src={image} alt={title} />
@@ -137,7 +142,7 @@ const MovieDetails = () => {
             </Table>
           </div>
         </MovieInfo>
-      )}
+      )) || <p>Unvalid Movie ID</p>}
     </>
   );
 };

@@ -51,3 +51,7 @@ export const Link = styled(NavLink)`
     box-shadow: 0px 0px 2px red;
   }
 `;
+
+export const ErrorBox = styled.div`
+  background-color: black;
+`;
