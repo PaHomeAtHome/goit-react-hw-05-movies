@@ -32,6 +32,7 @@ export const MovieDetails = () => {
     <>
       {Object.keys(movie).length > 0 && (
         <MovieInfo>
+          <ExtraLink to="/">⇦ Go back</ExtraLink>
           <BackDrop src={image} alt={title} />
           <div>
             <MovieTitle>{title.toUpperCase()}</MovieTitle>

@@ -69,6 +69,7 @@ export const MovieInfo = styled.div`
   background-color: #111111bb;
   padding: 30px;
   color: white;
+  padding-top: 0px;
 `;
 
 export const MovieTitle = styled.h2`
@@ -129,7 +130,7 @@ export const ExtraLink = styled(NavLink)`
   border-radius: 4px;
   text-decoration: none;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   transition-duration: 200ms;
   font-size: 21px;
   margin: 20px;
