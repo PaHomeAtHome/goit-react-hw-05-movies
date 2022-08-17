@@ -10,6 +10,7 @@ const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews'));
+const Error = lazy(() => import('../pages/Error'));
 
 export const App = () => {
   const [results, setResults] = useState([]);
@@ -32,6 +33,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </Container>
   );
