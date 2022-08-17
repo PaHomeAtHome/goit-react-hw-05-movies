@@ -153,6 +153,28 @@ export const ExtraLink = styled(NavLink)`
   }
 `;
 
+export const BackLink = styled(NavLink)`
+  display: inline-flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition-duration: 200ms;
+  font-size: 21px;
+  margin: 20px;
+  box-shadow: 0px 0px 2px white;
+
+  &:hover {
+    color: black;
+    background-color: yellow;
+    cursor: pointer;
+  }
+`;
+
 export const ActorCard = styled.li`
   img {
     object-fit: cover;
@@ -256,28 +278,4 @@ export const SearchInput = styled.input`
   border-radius: 5px;
 
   /* box-shadow: 0px 0px 5px 0px yellow; */
-`;
-
-export const GoBackButton = styled.button`
-  display: flex;
-  width: 20%;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition-duration: 200ms;
-  font-size: 21px;
-  margin: 20px;
-  box-shadow: 0px 0px 2px white;
-  background-color: #00000000;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-    background-color: yellow;
-    color: black;
-  }
 `;

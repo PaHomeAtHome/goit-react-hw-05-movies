@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { getMovieInfo } from 'services/API';
 import {
   BackDrop,
@@ -8,7 +7,7 @@ import {
   MovieInfo,
   MovieTitle,
   TableLink,
-  GoBackButton,
+  BackLink,
 } from 'components/ResultItem/ResultItem.styled';
 
 import { ExtraLink } from 'components/ResultItem/ResultItem.styled';
@@ -18,7 +17,8 @@ import { Outlet } from 'react-router-dom';
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
-  const navigate = useNavigate();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? location.state ?? '/';
 
   useEffect(() => {
     getMovieInfo(movieId).then(movie => {
@@ -35,7 +35,7 @@ export const MovieDetails = () => {
     <>
       {Object.keys(movie).length > 0 && (
         <MovieInfo>
-          <GoBackButton onClick={() => navigate(-1)}>⇦ Go back</GoBackButton>
+          <BackLink to={backLinkHref}>Go back</BackLink>
           <BackDrop src={image} alt={title} />
           <div>
             <MovieTitle>{title.toUpperCase()}</MovieTitle>

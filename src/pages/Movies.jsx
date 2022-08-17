@@ -41,7 +41,10 @@ export const Movies = () => {
         <SearchInput></SearchInput>
         <SearchButton>Search</SearchButton>
       </SearchForm>
-      {results.length > 0 && <ResultsList results={results} search={true} />}
+      {(results.length > 0 && (
+        <ResultsList results={results} search={true} />
+      )) ||
+        'No results'}
 
       <Outlet />
     </>
