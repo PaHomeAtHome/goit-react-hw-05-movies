@@ -61,7 +61,6 @@ export async function getReviews(id) {
       return `No results`;
     });
 
-  console.log(response.data.results);
   return response.data.results;
 }
 

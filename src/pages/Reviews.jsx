@@ -20,7 +20,6 @@ export const Reviews = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(reviews);
   return (
     <div>
       {(reviews.length > 0 && (
