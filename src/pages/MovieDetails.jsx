@@ -19,7 +19,6 @@ export const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
-  console.log(location.state?.from.pathname);
 
   useEffect(() => {
     getMovieInfo(movieId).then(movie => {

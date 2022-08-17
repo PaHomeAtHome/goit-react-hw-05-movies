@@ -53,3 +53,14 @@ export const ReviewList = styled.ul`
     }
   }
 `;
+
+export const Title = styled.h1`
+  margin: 0;
+  padding: 20px;
+  background-color: #ff0000cc;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: 700;
+  text-shadow: 0px 0px 20px #ff0000cc;
+`;

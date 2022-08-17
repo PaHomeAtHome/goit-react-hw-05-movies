@@ -44,7 +44,7 @@ export const Movies = () => {
       {(results.length > 0 && ['No results'] && (
         <ResultsList results={results} search={true} />
       )) ||
-        (query !== '' && 'No results') ||
+        (query !== '' && results.length < 1 && 'No results') ||
         'Please type something'}
 
       <Outlet />
