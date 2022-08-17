@@ -10,7 +10,7 @@ import {
   NoReviews,
 } from 'components/ResultItem/ResultItem.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   useLocation();
@@ -49,3 +49,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

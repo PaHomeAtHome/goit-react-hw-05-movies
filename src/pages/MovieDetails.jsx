@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { getMovieInfo } from 'services/API';
 import {
@@ -14,7 +14,7 @@ import { ExtraLink } from 'components/ResultItem/ResultItem.styled';
 
 import { Outlet } from 'react-router-dom';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
   const location = useLocation();
@@ -45,7 +45,9 @@ export const MovieDetails = () => {
             <ExtraLink to="reviews" state={{ from: location.state.from }}>
               Reviews
             </ExtraLink>
-            <Outlet />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Outlet />
+            </Suspense>
             <Table>
               <tbody>
                 {Object.keys(movie).map(key => {
@@ -139,3 +141,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

@@ -9,7 +9,7 @@ import {
   NoReviews,
 } from 'components/ResultItem/ResultItem.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   useLocation();
@@ -39,3 +39,5 @@ export const Reviews = () => {
     </div>
   );
 };
+
+export default Reviews;

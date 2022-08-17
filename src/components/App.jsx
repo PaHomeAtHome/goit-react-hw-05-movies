@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import fetchResult from 'services/API';
 import { useState, useEffect } from 'react';
-import Container from './Container/Container';
+import { lazy } from 'react';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'pages/Cast';
-import { Reviews } from 'pages/Reviews';
+
+const Container = lazy(() => import('./Container/Container'));
+const Home = lazy(() => import('../pages/Home'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const Cast = lazy(() => import('../pages/Cast'));
+const Reviews = lazy(() => import('../pages/Reviews'));
 
 export const App = () => {
   const [results, setResults] = useState([]);

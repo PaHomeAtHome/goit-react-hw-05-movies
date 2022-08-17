@@ -1,5 +1,5 @@
 import { Outlet, useSearchParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import {
   SearchButton,
   SearchForm,
@@ -8,7 +8,7 @@ import {
 import { findMovies } from 'services/API';
 import { ResultsList } from '../components/ResultList/ResultList';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
@@ -47,7 +47,11 @@ export const Movies = () => {
         (query !== '' && results.length < 1 && 'No results') ||
         'Please type something'}
 
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
+
+export default Movies;
