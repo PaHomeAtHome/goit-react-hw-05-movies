@@ -7,6 +7,7 @@ import {
   Actor,
   Character,
   CastContent,
+  NoReviews,
 } from 'components/ResultItem/ResultItem.styled';
 
 export const Cast = () => {
@@ -21,24 +22,29 @@ export const Cast = () => {
   }, []);
 
   return (
-    <CastList>
-      {cast.map(actor => {
-        const { character, name, profile_path } = actor;
-        const image =
-          (profile_path && 'https://image.tmdb.org/t/p/w500' + profile_path) ||
-          `https://www.addsystems.com/wp-content/uploads/2017/01/Anonym-e1491994623630.jpg`;
-        return (
-          <ActorCard key={name}>
-            <img src={image} alt={name} />
-            <CastContent>
-              Character: <Character>{character}</Character>
-            </CastContent>
-            <CastContent>
-              Actor: <Actor>{name}</Actor>
-            </CastContent>
-          </ActorCard>
-        );
-      })}
-    </CastList>
+    <>
+      {(cast.length > 0 && (
+        <CastList>
+          {cast.map(actor => {
+            const { character, name, profile_path } = actor;
+            const image =
+              (profile_path &&
+                'https://image.tmdb.org/t/p/w500' + profile_path) ||
+              `https://www.addsystems.com/wp-content/uploads/2017/01/Anonym-e1491994623630.jpg`;
+            return (
+              <ActorCard key={name}>
+                <img src={image} alt={name} />
+                <CastContent>
+                  Character: <Character>{character}</Character>
+                </CastContent>
+                <CastContent>
+                  Actor: <Actor>{name}</Actor>
+                </CastContent>
+              </ActorCard>
+            );
+          })}
+        </CastList>
+      )) || <NoReviews>No cast information for this movie</NoReviews>}
+    </>
   );
 };
